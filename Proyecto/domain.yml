@@ -1,0 +1,133 @@
+version: '3.1'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- affirm
+- ask_recipe
+- bot_challenge
+- change
+- continue
+- deny
+- entidades
+- goodbye
+- greet
+- ingredients
+- mood_great
+- mood_unhappy
+- name
+slots:
+  nombre:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: nombre
+  recetas:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: recetas
+  ingredientes:
+    type: any
+    mappings: []
+  entidad:
+    type: text
+    mappings: []
+entities:
+- nombre
+- recetas
+- ingredientes
+- entidad
+responses:
+  utter_greet:
+  - text: |
+      ¡Hola! Soy Remy, tu asistente virtual en la cocina y te ayudaré a encontar y preparar una deliciosa receta. ¿Tú cómo te llamas?
+  - text: |
+      ¡Hola! Soy Remy, tu asistente virtual en la cocina y te acompañaré mientras encontramos una receta deliciosa. Por qué no iniciamos con tu nombre
+  utter_name:
+  - text: |
+      ¿Ya sabes qué quieres preparar {nombre}?
+  - text: |
+      {nombre} ¿Ya tienes alguna idea de que cocinar?
+  utter_natalia:
+  - text: |
+      OKEY.
+  - text: |
+      jajaja vale.
+  utter_ask_recipe:
+  - text: |
+      ¿Qué te gustaria preparar?
+  - text: |
+      ¿Ya sabes que cocinar hoy?
+  utter_ask_category:
+  - text: |
+      ¿Tienes algún ingrediente en mente que quieras en tu receta?    
+  utter_recipe:
+  - text: |
+      ¿Qué cosa?
+  - text: |
+      ¿Qué quieres cocinar?
+  utter_start_cooking:
+  - text: |
+      ¡Me encanta! Entonces empecemos a cocinar.
+  - text: |
+      ¡Que buena elección! Comencemos.
+  utter_no_ingredients:
+  - text: |
+      ¿Quieres mirar otra receta o prefieres continuar con ésta?
+  utter_entities:
+  - text: |
+      ¿Tines ganas de preparar algo para desayunar o almorzar? O prefieres algo más dulce como un postre? O quieres algo más rápido y ligero como un snack? O eres alguien vegetariano y prefieres algo sin procedencia animal? O quieres hacer algo de tomar? O quieres probar tus dotes en la cocina y hacer algo de panadería?
+  utter_happy:
+  - text: |
+      Estupendo!
+  - text: |
+      Genial
+  utter_unhappy:
+  - text: |
+      Rayos!
+  - text: |
+      Que mal.
+  utter_default:
+  - text: |
+      Al parecer no entendí que querias, intentemos de nuevo.
+  - text: |
+      Lo siento, ¿podrías volver a decirme que quieres?
+  utter_goodbye:
+  - text: |
+      ¡Adiós, que te vaya bien!
+  - text: |
+      ¡Adiós, espero disfrutes tu comida!
+  utter_bad_goodbye:
+  - text: |
+      Al parecer no hay ninguna receta que se adapta a lo que quieres, asi que mejor me despido. Chao :)
+  utter_iamabot:
+  - text: |
+      Soy Remy, un bot desarrollado en Rasa.
+  utter_denada:
+  - text: |
+      De nada, espero te halla ayudado.
+actions:
+- action_search_recipe
+- utter_ask_recipe
+- utter_greet
+- utter_iamabot
+- utter_name
+- utter_recipe
+- utter_start_cooking
+- action_cooking
+- action_ingredients
+- action_change_recipe
+- action_search_ingredients
+- action_search_entities
+- utter_ask_category
+- utter_entities
+- utter_natalia
+- utter_happy
+- utter_no_ingredients
+- utter_unhappy
+- utter_goodbye
+- utter_bad_goodbye
+- utter_denada
