@@ -13,8 +13,9 @@ stories:
   - action: action_search_recipe
   - intent: affirm
   - action: utter_start_cooking
+  - action: action_cooking
   - action: utter_goodbye
-  
+
 - story: recipe no ingredients
   steps:
   - intent: greet
@@ -28,6 +29,7 @@ stories:
   - intent: deny
   - action: utter_no_ingredients
   - intent: continue
+  - action: action_cooking
   - action: utter_goodbye
 
 - story: change recipe no ingredients happy path
@@ -43,7 +45,82 @@ stories:
   - intent: deny
   - action: utter_no_ingredients
   - intent: change
+  - action: action_change_recipe
+  - intent: deny
   - action: utter_bad_goodbye
+
+- story: change recipe no ingredients no ingredients
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: name
+  - slot_was_set:
+    - nombre
+  - action: utter_name
+  - intent: ask_recipe
+  - action: action_search_recipe
+  - intent: deny
+  - action: utter_no_ingredients
+  - intent: change
+  - action: action_change_recipe
+  - intent: affirm
+  - action: action_ingredients
+  - intent: deny
+  - action: utter_no_ingredients
+
+- story: change recipe no ingredients unhappy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: name
+  - slot_was_set:
+    - nombre
+  - action: utter_name
+  - intent: ask_recipe
+  - action: action_search_recipe
+  - intent: deny
+  - action: utter_no_ingredients
+  - intent: change
+  - action: action_change_recipe
+  - intent: deny
+  - action: utter_bad_goodbye
+
+- story: other options recipe happy
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: name
+  - slot_was_set:
+    - nombre
+  - action: utter_name
+  - intent: ask_recipe
+  - action: action_search_recipe
+  - intent: affirm
+  - action: action_change_recipe
+
+- story: other options recipe unhappy
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: name
+  - slot_was_set:
+    - nombre
+  - action: utter_name
+  - intent: ask_recipe
+  - action: action_search_recipe
+  - intent: deny
+  - utter_bad_goodbye
+
+- story: greeting uhappy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: deny
+  - action: utter_natalia
+  - action: utter_ask_recipe
+  - intent: affirm
+  - action: utter_recipe
+  - action: action_search_recipe
 
 - story: greeting askion path
   steps:
@@ -61,30 +138,74 @@ stories:
   - action: utter_ask_recipe
   - intent: deny
   - action: utter_ask_category
-  - intent: deny
-  - action: utter_entities
-
-- story: say thanks
-  steps:
-  - intent: mood_great
-  - action: utter_denada
-
-- story: say goodbye
-  steps:
-  - intent: goodbye
+  - intent: ingredients
+  - action: action_search_ingredients
+  - intent: affirm
+  - action: action_ingredients
+  - intent: affirm
+  - action: action_cooking
   - action: utter_goodbye
-  
-- story: bot challenge
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
-- story: interactive_story_1
+
+- story: other ingredients unhappy path
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: deny
+  - action: utter_natalia
+  - action: utter_ask_recipe
+  - intent: deny
+  - action: utter_ask_category
+  - intent: ingredients
+  - action: action_search_ingredients
+  - intent: deny
+  - action: action_change_recipe
+
+- story: no idea ingredients happy path
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: name
-    entities:
-    - nombre: andres
-  - slot_was_set:
-    - nombre: andres
-  - action: utter_name
+  - intent: deny
+  - action: utter_natalia
+  - action: utter_ask_recipe
+  - intent: deny
+  - action: utter_ask_category
+  - intent: deny
+  - action: utter_entities
+  - intent: entidades
+  - action: action_search_entities
+  - intent: affirm
+  - action: action_ingredients
+  - intent: affirm
+  - action: action_cooking
+  - action: utter_goodbye
+
+- story: no idea ingredients happy path
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: deny
+  - action: utter_natalia
+  - action: utter_ask_recipe
+  - intent: deny
+  - action: utter_ask_category
+  - intent: deny
+  - action: utter_entities
+  - intent: entidades
+  - action: action_search_entities
+  - intent: deny
+  - action: action_change_recipe
+
+story: say thanks
+  steps: 
+  - intent: mood_great
+  - action: utter_denada
+
+story:  say goodbye
+  steps: 
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: bot challenge
+  steps: 
+  - intent: bot_challenge
+  - action: utter_iamabot
