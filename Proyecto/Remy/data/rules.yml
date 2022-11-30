@@ -64,7 +64,7 @@ rules:
 
 - rule: Question greet
   condition:
-  - active_loop: utter_name
+  - active_loop: utter_greet
   steps:
   - intent: deny
   - action: utter_natalia

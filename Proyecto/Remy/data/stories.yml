@@ -109,7 +109,7 @@ stories:
   - intent: ask_recipe
   - action: action_search_recipe
   - intent: deny
-  - utter_bad_goodbye
+  - action: utter_bad_goodbye
 
 - story: greeting uhappy path
   steps:
@@ -195,12 +195,12 @@ stories:
   - intent: deny
   - action: action_change_recipe
 
-story: say thanks
+- story: say thanks
   steps: 
   - intent: mood_great
   - action: utter_denada
 
-story:  say goodbye
+- story:  say goodbye
   steps: 
   - intent: goodbye
   - action: utter_goodbye
