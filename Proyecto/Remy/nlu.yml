@@ -1,0 +1,1080 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hola
+    - buen día
+    - Hola, buenos dias
+    - Hola
+    - Buen dia
+    - hola buen dia
+    - Buenasss
+    - Hola!!!!
+    - buenas
+    - Buenas tardes
+    - Buenas noches
+    - Hola, ¿cómo estas?
+    - Hola, como estas
+    - Hey
+    - ¿qué más remy?
+    - Q'hubo
+    - que hubo
+    - Que onda
+    - Hi
+    - hello
+    - what's happend?
+- intent: name
+  examples: |
+    - Hola mi nombre es [Juan](nombre)
+    - Yo me llamo [Dana](nombre)
+    - Encantado, mi nombre es [Andrés](nombre)
+    - que tal, yo soy [Natalia](nombre)
+    - hola Remy, soy [Sebastián](nombre)
+    - mucho gusto remy, mi nombre es [Álvaro](nombre)
+    - Hola soy [José](nombre), ¿cómo estás?
+    - soy [andrea](nombre)
+    - un gusto, mi nombre es [Felipe](nombre)
+    - Remy, hola yo soy [Alvaro](nombre)
+    - [andres](nombre)
+- intent: goodbye
+  examples: |
+    - Adios
+    - adios!
+    - chao
+    - gracias, adios
+    - hasta luego
+    - besos
+    - abrazos
+    - Adios amigo!
+    - Hasta la próxima
+    - que te vaya bien
+    - feliz día
+    - feliz tarde
+    - feliz noche
+    - Nos vemos
+- intent: affirm
+  examples: |
+    - Si
+    - Sí
+    - si
+    - vale
+    - claro
+    - eso suena bien
+    - Eso suena genial
+    - correcto
+    - Vale
+    - Dale
+    - siiii
+    - okey
+    - oka
+    - Ok
+    - dale!!!
+    - Por supuesto
+    - clarisimo!
+    - Suena increible
+- intent: deny
+  examples: |
+    - no
+    - nunca
+    - Yo no pienso eso
+    - No me gusto eso
+    - no hay forma
+    - no hay manera
+    - realmente no
+    - No puedo
+    - ninguno
+    - nop
+    - ñe
+    - nah
+    - No, ninguna
+    - no ninguno
+    - no quiero
+    - No le voy a dar mi nombre
+    - ¿para que quiere mi nombre?
+- intent: mood_great
+  examples: |
+    - perfecto
+    - muy bien
+    - great
+    - muchas gracias
+    - increible
+    - grandioso
+    - estupendo
+    - Me siento muy bien
+    - Estoy bien
+    - Te agradezco
+    - De nada
+    - Mil gracias
+    - gracias
+    - Muchisimas gracias!
+    - :)
+    - Gracias a ti
+    - Bien, gracias
+    - Superrr
+    - super mega hambienta
+- intent: mood_unhappy
+  examples: |
+    - no se
+    - triste
+    - muy triste
+    - molesto
+    - mal
+    - Muy mal
+    - horrible
+    - terrible
+    - no muy bien
+    - Extremadamente mal
+    - no podria ser peor
+    - No sé
+- intent: continue
+  examples: |
+    - continuar
+    - sigamos
+    - adelante
+    - preparemos estoy
+    - si quiero seguir con la receta
+    - Seguir con la actual
+- intent: change
+  examples: |
+    - quiero cambiar
+    - Cambiar receta
+    - ver otra sugerencia
+    - Ver otras opciones
+    - cambiar
+    - Veamos otra opción
+- intent: bot_challenge
+  examples: |
+    - ¿Eres un bot?
+    - ¿Eres un humano?
+    - ¿Le estoy hablando a un bot?
+    - ¿Le estoy hablando a un humano?
+- intent: entidades
+  examples: |
+    - ¿Tienes recetas de [panadería]{"entity": "entidad", "value": "Panader\u00eda"}?
+    - Tengo ganas de un [snack]{"entity": "entidad", "value": "Snack"} salado
+    - Quiero algo para [picar]{"entity": "entidad", "value": "Snack"} entre comidas
+    - Recetas de productos de [panadería]{"entity": "entidad", "value": "Panader\u00eda"}
+    - Necesito preparar un [postre]{"entity": "entidad", "value": "Postre"} para mis hijos
+    - Hoy quiero preparar algo [dulce]{"entity": "entidad", "value": "Postre"}
+    - Para mi descanso quiero algún [postre]{"entity": "entidad", "value": "Postre"}
+    - Recetas para el [postre]{"entity": "entidad", "value": "Postre"} de mis hijos
+    - [Postres]{"entity": "entidad", "value": "Postre"}
+    - Quiero preparar un [postre]{"entity": "entidad", "value": "Postre"}
+    - Enséñame a preparar algo [dulce]{"entity": "entidad", "value": "Postre"}
+    - Me fascina el [dulce]{"entity": "entidad", "value": "Postre"}
+    - [Bebidas]{"entity": "entidad", "value": "Bebida"} para acompañar mi almuerzo
+    - [Bebidas]{"entity": "entidad", "value": "Bebida"} refrescantes
+    - ¿Qué preparar para [tomar]{"entity": "entidad", "value": "Bebida"}?
+    - [bebidas]{"entity": "entidad", "value": "Bebida"} para noche de amigos
+    - Algo de [tomar]{"entity": "entidad", "value": "Bebida"} para un asado
+    - [Sobremesa]{"entity": "entidad", "value": "Postre"} para el almuerzo
+    - Ideas de [refrescos]{"entity": "entidad", "value": "Bebida"} para mis invitados
+    - ¿Qué [bebida]{"entity": "entidad", "value": "Bebida"} es mejor para acompañar una comida picante?
+    - ¿Con qué [bebida]{"entity": "entidad", "value": "Bebida"} acompaño mis huevos?
+    - ¿Cómo preparar un [almuerzo]{"entity": "entidad", "value": "Almuerzo"} rápido?
+    - Ideas de [sopas]{"entity": "entidad", "value": "Almuerzo"} caseras
+    - Recetas de [almuerzos]{"entity": "entidad", "value": "Almuerzo"} tradicionales
+    - No sé qué [almorzar]{"entity": "entidad", "value": "Almuerzo"}
+    - [Almuerzo](entidad) casero
+    - Tengo un [almuerzo]{"entity": "entidad", "value": "Almuerzo"} especial, ¿Qué puedo preparar?
+    - Propuestas para un [almuerzo]{"entity": "entidad", "value": "Almuerzo"} importante
+    - Necesito un [almuerzo]{"entity": "entidad", "value": "Almuerzo"} que se prepare rápido
+    - Recetas de comidas [rápidas]{"entity": "entidad", "value": "Snack"}
+    - Necesito un almuerzo [vegetariano]{"entity": "entidad", "value": "Vegetariano"}
+    - Dame opciones para preparar [desayunos]{"entity": "entidad", "value": "Desayuno"}
+    - [Almuerzos]{"entity": "entidad", "value": "Almuerzo"} sofisticados para sorprender a alguien
+    - quiero preparar algo [dulce]{"entity": "entidad", "value": "Postre"}
+- intent: ask_recipe
+  examples: |
+    - ¿Cómo preparar [pan]{"entity": "recetas", "value": "Pan blandito"}?
+    - ¿Cómo se prepara el [arequipe]{"entity": "recetas", "value": "Arequipe o dulce de leche"}?
+    - muestrame la receta para preparar [galletas]{"entity": "recetas", "value": "Galletas con chispas de chocolate"}
+    - Quiero preparar [hamburguesas]{"entity": "recetas", "value": "Hamburguesas"}
+    - ¿como se prepara un [sancocho]{"entity": "recetas", "value": "Sancocho de costilla de res"}?
+    - [pure]{"entity": "recetas", "value": "Pur\u00e9 de papas"} de papa
+    - como preparar [puré]{"entity": "recetas", "value": "Pur\u00e9 de papas"} de papas
+    - quiero [puré]{"entity": "recetas", "value": "Pur\u00e9 de papas"} de papa
+    - quiero preparar [pure]{"entity": "recetas", "value": "Pur\u00e9 de papas"} de papas
+    - cocinar papas en [pure]{"entity": "recetas", "value": "Pur\u00e9 de papas"}
+    - receta de [pure]{"entity": "recetas", "value": "Pur\u00e9 de papas"} de papa
+    - [filete Mignon]{"entity": "recetas", "value": "Filete Mignon"}
+    - [pollo a la naranja]{"entity": "recetas", "value": "Pollo a la naranja"}
+    - [pescado al ajillo]{"entity": "recetas", "value": "Pescado al ajillo"}
+    - [garbanzos guisados con chorizo]{"entity": "recetas", "value": "Garbanzos guisados con chorizo"}
+    - [cerdo agridulce]{"entity": "recetas", "value": "Cerdo agridulce"}
+    - [pavo navideño]{"entity": "recetas", "value": "Pavo navide\u00f1o"}
+    - [arvejas guisadas con pollo y vegetales]{"entity": "recetas", "value": "Arvejas guisadas con pollo y vegetales"}
+    - [camarones apanados]{"entity": "recetas", "value": "Camarones apanados"}
+    - [lomo con salsa de cebolla]{"entity": "recetas", "value": "Lomo con salsa de cebolla"}
+    - [arroz con pollo]{"entity": "recetas", "value": "Arroz con pollo"}
+    - [milanesa de pollo]{"entity": "recetas", "value": "Milanesa de pollo"}
+    - [lasaña con carne]{"entity": "recetas", "value": "Lasa\u00f1a con carne"}
+    - [croquetas de jamón]{"entity": "recetas", "value": "Croquetas de jam\u00f3n"}
+    - [huevos al estilo turco]{"entity": "recetas", "value": "Huevos al estilo turco"}
+    - [lomo de cerdo al horno]{"entity": "recetas", "value": "Lomo de cerdo al horno"}
+    - [pechuga de pollo en salsa con tomate]{"entity": "recetas", "value": "Pechuga de pollo en salsa con tomate"}
+    - [costillas a la cerveza en el horno]{"entity": "recetas", "value": "Costillas a la cerveza en el horno"}
+    - [hamburguesas de berenjena]{"entity": "recetas", "value": "Hamburguesas de berenjena"}
+    - [quinoa al estilo arroz frito tres delicias]{"entity": "recetas", "value": "Quinoa al estilo arroz frito tres delicias"}
+    - [pollo a la Coca Cola]{"entity": "recetas", "value": "Pollo a la Coca Cola"}
+    - [salchichas al vino con patatas]{"entity": "recetas", "value": "Salchichas al vino con patatas"}
+    - [ensalada de pasta fría con pollo]{"entity": "recetas", "value": "Ensalada de pasta fr\u00eda con pollo"}
+    - [papas al ajillo]{"entity": "recetas", "value": "Papas al ajillo"}
+    - [wraps de pavo]{"entity": "recetas", "value": "Wraps de pavo"}
+    - [sandwich de pollo asado]{"entity": "recetas", "value": "Sandwich de pollo asado"}
+    - [tamales santafereños]{"entity": "recetas", "value": "Tamales bogotanos o santafere\u00f1os"}
+    - [tamales]{"entity": "recetas", "value": "Tamales bogotanos o santafere\u00f1os"}
+    - [hamburguesa]{"entity": "recetas", "value": "Hamburguesas"}
+    - [chuletas de cerdo asadas]{"entity": "recetas", "value": "Chuletas de cerdo asadas"}
+    - [carne desmechada]{"entity": "recetas", "value": "Carne desmechada"}
+    - [espaguetis a la carbonara]{"entity": "recetas", "value": "Espaguetis a la carbonara"}
+    - [salmón con salsa de Acre]{"entity": "recetas", "value": "Salm\u00f3n con salsa de Acre"}
+    - [macarrones con queso]{"entity": "recetas", "value": "Macarrones con queso"}
+    - [bistec a caballo]{"entity": "recetas", "value": "Bistec a caballo"}
+    - [ensalada rusa]{"entity": "recetas", "value": "Ensalada rusa"}
+    - [chicharrón]{"entity": "recetas", "value": "Chicharr\u00f3n"}
+    - [fetuccini Alfredo con pollo]{"entity": "recetas", "value": "Fetuccini Alfredo con pollo"}
+    - [perro caliente]{"entity": "recetas", "value": "Perro caliente"}
+    - [costillas BBQ]{"entity": "recetas", "value": "Costillas BBQ"}
+    - [tajadas]{"entity": "recetas", "value": "Tajadas"}
+    - [mazamorra]{"entity": "recetas", "value": "Mazamorra"}
+    - [chuleta valluna]{"entity": "recetas", "value": "Chuleta valluna"}
+    - [papas chorreadas]{"entity": "recetas", "value": "Papas chorreadas"}
+    - [frijoles]{"entity": "recetas", "value": "Fr\u00edjoles"}
+    - [espaguetis con albóndigas]{"entity": "recetas", "value": "Espaguetis con alb\u00f3ndigas"}
+    - [burrito Bol De Pollo Chipotle]{"entity": "recetas", "value": "Burrito Bol De Pollo Chipotle"}
+    - [puré de papas]{"entity": "recetas", "value": "Pur\u00e9 de papas"}
+    - [sopa de fideos y albóndigas]{"entity": "recetas", "value": "Sopa de fideos y alb\u00f3ndigas"}
+    - [sopa de lentejas]{"entity": "recetas", "value": "Sopa de lentejas"}
+    - [crema de calabacín]{"entity": "recetas", "value": "Crema de calabac\u00edn"}
+    - [crema de champiñones]{"entity": "recetas", "value": "Crema de champi\u00f1ones"}
+    - [mondongo]{"entity": "recetas", "value": "Mondongo"}
+    - [sopa de plátano verde]{"entity": "recetas", "value": "Sopa de pl\u00e1tano verde"}
+    - [sopa de tortillas de huevo]{"entity": "recetas", "value": "Sopa de tortillas de huevo"}
+    - [sopa de albondigas con arroz]{"entity": "recetas", "value": "Sopa de albondigas con arroz"}
+    - [sancocho de costilla de res]{"entity": "recetas", "value": "Sancocho de costilla de res"}
+    - [arroz con camarones]{"entity": "recetas", "value": "Arroz con camarones"}
+    - [arroz con pollo y verduras]{"entity": "recetas", "value": "Arroz con pollo y verduras"}
+    - [arroz frito tres delicias]{"entity": "recetas", "value": "Arroz frito tres delicias"}
+    - [arroz blanco]{"entity": "recetas", "value": "Arroz blanco"}
+    - [arroz atollado]{"entity": "recetas", "value": "Arroz atollado"}
+    - [arroz con coco]{"entity": "recetas", "value": "Arroz con coco"}
+    - [arroz chino colombiano]{"entity": "recetas", "value": "Arroz chino colombiano"}
+    - [huevos villaroy]{"entity": "recetas", "value": "Huevos villaroy"}
+    - [burrito de jamón]{"entity": "recetas", "value": "Burrito de jam\u00f3n"}
+    - [huevos rancheros]{"entity": "recetas", "value": "Huevos rancheros"}
+    - [omelette sencillo]{"entity": "recetas", "value": "Omelette sencillo"}
+    - [arepas de huevo]{"entity": "recetas", "value": "Arepas de huevo"}
+    - [huevos pericos]{"entity": "recetas", "value": "Huevos pericos"}
+    - [pancakes]{"entity": "recetas", "value": "Pancakes"}
+    - [calentado]{"entity": "recetas", "value": "Calentado"}
+    - [changua]{"entity": "recetas", "value": "Changua"}
+    - [buñuelos]{"entity": "recetas", "value": "Bu\u00f1uelos"}
+    - [almojábanas]{"entity": "recetas", "value": "Almoj\u00e1banas"}
+    - [pandebonos]{"entity": "recetas", "value": "Pandebonos"}
+    - [pandeyucas]{"entity": "recetas", "value": "Pandeyucas"}
+    - [pan blandito]{"entity": "recetas", "value": "Pan blandito"}
+    - [dedos de queso]{"entity": "recetas", "value": "Dedos de queso"}
+    - [galletas con chispas de chocolate]{"entity": "recetas", "value": "Galletas con chispas de chocolate"}
+    - [torta de tres leches de chocolate]{"entity": "recetas", "value": "Torta de tres leches de chocolate"}
+    - [masa para pizza]{"entity": "recetas", "value": "Masa para pizza"}
+    - [arepas boyacenses]{"entity": "recetas", "value": "Arepas boyacenses"}
+    - [helado de vainilla]{"entity": "recetas", "value": "Helado de vainilla"}
+    - [postre de cafe]{"entity": "recetas", "value": "Postre de caf\u00e9"}
+    - [helado de oreo]{"entity": "recetas", "value": "Helado de Oreo"}
+    - [leche evaporada]{"entity": "recetas", "value": "Leche evaporada"}
+    - [brazo de reina]{"entity": "recetas", "value": "Brazo de reina"}
+    - [arequipe o dulce de leche]{"entity": "recetas", "value": "Arequipe o dulce de leche"}
+    - [alfajores]{"entity": "recetas", "value": "Alfajores"}
+    - [crispetas de caramelo]{"entity": "recetas", "value": "Crispetas o palomitas de ma\u00edz de caramelo"}
+    - [palomitas de maíz de caramelo]{"entity": "recetas", "value": "Crispetas o palomitas de ma\u00edz de caramelo"}
+    - [postre de milo]{"entity": "recetas", "value": "Postre de milo"}
+    - [fresas con crema]{"entity": "recetas", "value": "Fresas con crema"}
+    - [limonada cerezada]{"entity": "recetas", "value": "Limonada cerezada"}
+    - [frappe de mocachino]{"entity": "recetas", "value": "Frappe de mocachino"}
+    - [capuchino]{"entity": "recetas", "value": "Capuchino"}
+    - [avena]{"entity": "recetas", "value": "Avena"}
+    - [leche de coco]{"entity": "recetas", "value": "Leche de coco"}
+    - [refajo]{"entity": "recetas", "value": "Refajo"}
+    - [piña colada]{"entity": "recetas", "value": "Pi\u00f1a colada"}
+    - [sabajón]{"entity": "recetas", "value": "Sabaj\u00f3n"}
+    - [malteada de vainilla]{"entity": "recetas", "value": "Malteada o batido de vainilla"}
+    - [batido de vainilla]{"entity": "recetas", "value": "Malteada o batido de vainilla"}
+    - [alitas de pollo bufalo]{"entity": "recetas", "value": "Alitas de pollo B\u00fafalo"}
+    - Hola, quiero preparar [arroz con pollo]{"entity": "recetas", "value": "Arroz con pollo"}
+    - como se prepara el [arroz con pollo]{"entity": "recetas", "value": "Arroz con pollo"}
+    - quiero preparar [garbanzos]{"entity": "recetas", "value": "Garbanzos guisados con chorizo"}
+    - receta para preparar arepas
+    - ¿Cómo se hacen las [croquetas de jamón]{"entity": "recetas", "value": "Croquetas de jam\u00f3n"}?
+    - hey! cómo se preparan los [dedos de queso]{"entity": "recetas", "value": "Dedos de queso"}?
+    - quisiera preparar [arroz chino]{"entity": "recetas", "value": "Arroz chino colombiano"}
+    - hoy tengo ganas de [espaguetis a la carbonara]{"entity": "recetas", "value": "Espaguetis a la carbonara"}
+    - puedes ayudarme a preparar [costillas bbq]{"entity": "recetas", "value": "Costillas BBQ"}?
+    - ¿sabes preparar [chicharron]{"entity": "recetas", "value": "Chicharr\u00f3n"}?
+    - ¿tienes la receta de [changua]{"entity": "recetas", "value": "Changua"}?
+    - hoy quiero preparar una [crema de champiñones]{"entity": "recetas", "value": "Crema de champi\u00f1ones"}
+    - Quiero comer [macarrones con queso]{"entity": "recetas", "value": "Macarrones con queso"}
+    - ¿cómo preparar [leche evaporada]{"entity": "recetas", "value": "Leche evaporada"}?
+    - se me antoja un [helado de vainilla]{"entity": "recetas", "value": "Helado de vainilla"}
+    - tengo antojo de un [postre de milo]{"entity": "recetas", "value": "Postre de milo"}
+    - quiero tomarme un [capuchino]{"entity": "recetas", "value": "Capuchino"}
+    - ¿como preparar [buñuelos]{"entity": "recetas", "value": "Bu\u00f1uelos"} para navidad
+    - quiero [pavo]{"entity": "recetas", "value": "Pavo navide\u00f1o"} para la cena de navidad
+    - quiero preparar un [cerdo agridulce]{"entity": "recetas", "value": "Cerdo agridulce"}
+    - hoy quiero [lasaña]{"entity": "recetas", "value": "Lasa\u00f1a con carne"} con carne
+    - quiero preparar una [ensalada fria]{"entity": "recetas", "value": "Ensalada de pasta fr\u00eda con pollo"}
+    - [tamales bogotanos]{"entity": "recetas", "value": "Tamales bogotanos o santafere\u00f1os"}
+    - Si, quiero [bistec]{"entity": "recetas", "value": "Bistec a caballo"}
+    - quiero un [mondongo]{"entity": "recetas", "value": "Mondongo"}
+    - me gustaria preparar [avena]{"entity": "recetas", "value": "Avena"}
+    - Me gustaria hacer una [mazamorra]{"entity": "recetas", "value": "Mazamorra"}
+    - quiero comer [arroz con coco]{"entity": "recetas", "value": "Arroz con coco"}
+    - Hoy quiero [perros calientes]{"entity": "recetas", "value": "Perro caliente"} para mis amigos
+    - hoy quiero preparar [papas chorreadas]{"entity": "recetas", "value": "Papas chorreadas"}
+    - cocinar [papas de ajo]{"entity": "recetas", "value": "Papas al ajillo"}
+    - hoy quiero [huevos turcos]{"entity": "recetas", "value": "Huevos al estilo turco"}
+    - quisiera un [burrito de jamon]{"entity": "recetas", "value": "Burrito de jam\u00f3n"}
+    - se me antoja algo dulce con [arequipe]{"entity": "recetas", "value": "Arequipe o dulce de leche"}
+- intent: ingredients
+  examples: |
+    - A mi pareja le gusta la [pasta](ingredientes), ¿Que le puedo preparar?
+    - si, quiero [papas](ingredientes)
+    - En que comidas puedo usar [carnes rojas]{"entity": "ingredientes", "value": "carne de res"}?
+    - Quiero comer algo con [café](ingredientes)
+    - ¿En qué recetas puedo utilizar [leche](ingredientes)?
+    - ¿Qué puedo preparar usando [leche](ingredientes)?
+    - [huevo](ingredientes)
+    - [Huevo]{"entity": "ingredientes", "value": "huevo"}
+    - [Cebolla]{"entity": "ingredientes", "value": "cebolla"}
+    - [Pollo]{"entity": "ingredientes", "value": "pollo"}
+    - [Carne]{"entity": "ingredientes", "value": "carne"}
+    - [carne de res](ingredientes)
+    - [Zanahoria]{"entity": "ingredientes", "value": "zanahoria"}
+    - [Leche]{"entity": "ingredientes", "value": "leche"}
+    - [Queso]{"entity": "ingredientes", "value": "queso"}
+    - [Maiz]{"entity": "ingredientes", "value": "maiz"}
+    - [Arroz]{"entity": "ingredientes", "value": "arroz"}
+    - [Cerdo]{"entity": "ingredientes", "value": "cerdo"}
+    - [Vainilla]{"entity": "ingredientes", "value": "vainilla"}
+    - [Pimentón]{"entity": "ingredientes", "value": "piment\u00f3n"}
+    - [Pimenton]{"entity": "ingredientes", "value": "piment\u00f3n"}
+    - [Ajo]{"entity": "ingredientes", "value": "ajo"}
+    - [dientes de ajo]{"entity": "ingredientes", "value": "ajo"}
+    - [Mantequilla]{"entity": "ingredientes", "value": "matequilla"}
+    - [Tomates]{"entity": "ingredientes", "value": "tomates"}
+    - [Salmón]{"entity": "ingredientes", "value": "salm\u00f3n"}
+    - [Pan]{"entity": "ingredientes", "value": "pan"}
+    - [Perejil]{"entity": "ingredientes", "value": "perejil"}
+    - [Aceite de oliva extra virgen]{"entity": "ingredientes", "value": "aceite"}
+    - [Harina de trigo]{"entity": "ingredientes", "value": "harina"}
+    - [Levadura]{"entity": "ingredientes", "value": "levadura"}
+    - [Oregano]{"entity": "ingredientes", "value": "or\u00e9gano"}
+    - [Cilantro]{"entity": "ingredientes", "value": "cilantro"}
+    - [Vinagre]{"entity": "ingredientes", "value": "vinagre"}
+    - [Limon]{"entity": "ingredientes", "value": "lim\u00f3n"}
+    - [Pasta]{"entity": "ingredientes", "value": "pasta"}
+    - [Vino]{"entity": "ingredientes", "value": "vino"}
+    - [Laurel]{"entity": "ingredientes", "value": "laurel"}
+    - [Arvejas]{"entity": "ingredientes", "value": "arvejas"}
+    - [Lechuga]{"entity": "ingredientes", "value": "lechuga"}
+    - [Platano]{"entity": "ingredientes", "value": "pl\u00e1tano"}
+    - [Maizena]{"entity": "ingredientes", "value": "maizena"}
+    - [Tocineta]{"entity": "ingredientes", "value": "tocineta"}
+    - [Papa]{"entity": "ingredientes", "value": "papa"}
+    - [Queso parmesano{"entity":"ingredientes","value":"queso"}
+    - [Yuca]{"entity": "ingredientes", "value": "yuca"}
+    - [Camarones]{"entity": "ingredientes", "value": "camarones"}
+    - [Garbanzos]{"entity": "ingredientes", "value": "garbanzos"}
+    - [Jengibre]{"entity": "ingredientes", "value": "jengibre"}
+    - [Albahaca]{"entity": "ingredientes", "value": "albahaca"}
+    - [Lomo]{"entity": "ingredientes", "value": "lomo"}
+    - [Mostaza]{"entity": "ingredientes", "value": "mostaza"}
+    - [Salchichas]{"entity": "ingredientes", "value": "salchichas"}
+    - [Frijoles]{"entity": "ingredientes", "value": "fr\u00edjoles"}
+    - [Costillas de cerdo]{"entity": "ingredientes", "value": "costilla de cerdo"}
+    - [Caldo de gallina]{"entity": "ingredientes", "value": "caldo"}
+    - [Cerveza]{"entity": "ingredientes", "value": "cerveza"}
+    - [Manzana]{"entity": "ingredientes", "value": "manzana"}
+    - [Guayaba]{"entity": "ingredientes", "value": "guayaba"}
+    - [Champiñones]{"entity": "ingredientes", "value": "champi\u00f1ones"}
+    - [Cebolla larga]{"entity": "ingredientes", "value": "cebolla"}
+    - [Azucar]{"entity": "ingredientes", "value": "azucar"}
+    - [Azucar glas]{"entity": "ingredientes", "value": "azucar"}
+    - [Fresas]{"entity":"ingredientes","value":"fresas"
+    - [Cerezas]{"entity": "ingredientes", "value": "cerezas"}
+    - [Clavos de canela]{"entity": "ingredientes", "value": "canela"}
+    - [Aji]{"entity": "ingredientes", "value": "aj\u00ed"}
+    - [Miel]{"entity": "ingredientes", "value": "miel"}
+    - [Hierbabuena]{"entity": "ingredientes", "value": "hierbabuena"}
+    - [Langostinos]{"entity": "ingredientes", "value": "langostinos"}
+    - [Habichuela]{"entity": "ingredientes", "value": "habichuela"}
+    - [Aguardiente]{"entity": "ingredientes", "value": "aguardiente"}
+    - [Jalapeño]{"entity": "ingredientes", "value": "jalape\u00f1o"}
+    - [salado]{"entity": "ingredientes", "value": "Sal"}, como una sopa
+    - Salado, como algun [arroz]{"entity": "ingredientes", "value": "Arroz"}
+    - [salado]{"entity": "ingredientes", "value": "Sal"}, con pollo y arroz
+    - salado, con [carne](ingredientes)
+    - [salado]{"entity": "ingredientes", "value": "Sal"}, para el almuerzo
+    - quiero [salchichas]{"entity": "ingredientes", "value": " salchichas"}
+    - quiero tomar [cafe]{"entity": "ingredientes", "value": "caf\u00e9"}
+    - quiero algo salado con [carne](ingredientes)
+    - tengo unos [tomates](ingredientes) que se van a dañar
+- synonym: Panadería
+  examples: |
+    - panadería
+- synonym: Snack
+  examples: |
+    - snack
+    - picar
+    - rápidas
+- synonym: Postre
+  examples: |
+    - postre
+    - dulce
+    - Postres
+    - Sobremesa
+- synonym: Bebida
+  examples: |
+    - Bebidas
+    - tomar
+    - bebidas
+    - refrescos
+    - bebida
+- synonym: Almuerzo
+  examples: |
+    - almuerzo
+    - sopas
+    - almuerzos
+    - almorzar
+    - Almuerzos
+- synonym: Vegetariano
+  examples: |
+    - vegetariano
+- synonym: Desayuno
+  examples: |
+    - desayunos
+- synonym: Pan blandito
+  examples: |
+    - pan
+    - pan blandito
+- synonym: Arequipe o dulce de leche
+  examples: |
+    - arequipe
+    - arequipe o dulce de leche
+- synonym: Galletas con chispas de chocolate
+  examples: |
+    - galletas
+    - galletas con chispas de chocolate
+- synonym: Hamburguesas
+  examples: |
+    - hamburguesas
+    - hamburguesa
+- synonym: Sancocho de costilla de res
+  examples: |
+    - sancocho
+    - sancocho de costilla de res
+- synonym: Puré de papas
+  examples: |
+    - pure
+    - puré
+    - puré de papas
+- synonym: Filete Mignon
+  examples: |
+    - filete Mignon
+- synonym: Pollo a la naranja
+  examples: |
+    - pollo a la naranja
+- synonym: Pescado al ajillo
+  examples: |
+    - pescado al ajillo
+- synonym: Garbanzos guisados con chorizo
+  examples: |
+    - garbanzos guisados con chorizo
+    - garbanzos
+- synonym: Cerdo agridulce
+  examples: |
+    - cerdo agridulce
+- synonym: Pavo navideño
+  examples: |
+    - pavo navideño
+    - pavo
+- synonym: Arvejas guisadas con pollo y vegetales
+  examples: |
+    - arvejas guisadas con pollo y vegetales
+- synonym: Camarones apanados
+  examples: |
+    - camarones apanados
+- synonym: Lomo con salsa de cebolla
+  examples: |
+    - lomo con salsa de cebolla
+- synonym: Arroz con pollo
+  examples: |
+    - arroz con pollo
+- synonym: Milanesa de pollo
+  examples: |
+    - milanesa de pollo
+- synonym: Lasaña con carne
+  examples: |
+    - lasaña con carne
+    - lasaña
+- synonym: Croquetas de jamón
+  examples: |
+    - croquetas de jamón
+- synonym: Huevos al estilo turco
+  examples: |
+    - huevos al estilo turco
+    - huevos turcos
+- synonym: Lomo de cerdo al horno
+  examples: |
+    - lomo de cerdo al horno
+- synonym: Pechuga de pollo en salsa con tomate
+  examples: |
+    - pechuga de pollo en salsa con tomate
+- synonym: Costillas a la cerveza en el horno
+  examples: |
+    - costillas a la cerveza en el horno
+- synonym: Hamburguesas de berenjena
+  examples: |
+    - hamburguesas de berenjena
+- synonym: Quinoa al estilo arroz frito tres delicias
+  examples: |
+    - quinoa al estilo arroz frito tres delicias
+- synonym: Pollo a la Coca Cola
+  examples: |
+    - pollo a la Coca Cola
+- synonym: Salchichas al vino con patatas
+  examples: |
+    - salchichas al vino con patatas
+- synonym: Ensalada de pasta fría con pollo
+  examples: |
+    - ensalada de pasta fría con pollo
+    - ensalada fria
+- synonym: Papas al ajillo
+  examples: |
+    - papas al ajillo
+    - papas de ajo
+- synonym: Wraps de pavo
+  examples: |
+    - wraps de pavo
+- synonym: Sandwich de pollo asado
+  examples: |
+    - sandwich de pollo asado
+- synonym: Tamales bogotanos o santafereños
+  examples: |
+    - tamales santafereños
+    - tamales
+    - tamales bogotanos
+- synonym: Chuletas de cerdo asadas
+  examples: |
+    - chuletas de cerdo asadas
+- synonym: Carne desmechada
+  examples: |
+    - carne desmechada
+- synonym: Espaguetis a la carbonara
+  examples: |
+    - espaguetis a la carbonara
+- synonym: Salmón con salsa de Acre
+  examples: |
+    - salmón con salsa de Acre
+- synonym: Macarrones con queso
+  examples: |
+    - macarrones con queso
+- synonym: Bistec a caballo
+  examples: |
+    - bistec a caballo
+    - bistec
+- synonym: Ensalada rusa
+  examples: |
+    - ensalada rusa
+- synonym: Chicharrón
+  examples: |
+    - chicharrón
+    - chicharron
+- synonym: Fetuccini Alfredo con pollo
+  examples: |
+    - fetuccini Alfredo con pollo
+- synonym: Perro caliente
+  examples: |
+    - perro caliente
+    - perros calientes
+- synonym: Costillas BBQ
+  examples: |
+    - costillas BBQ
+    - costillas bbq
+- synonym: Tajadas
+  examples: |
+    - tajadas
+- synonym: Mazamorra
+  examples: |
+    - mazamorra
+- synonym: Chuleta valluna
+  examples: |
+    - chuleta valluna
+- synonym: Papas chorreadas
+  examples: |
+    - papas chorreadas
+- synonym: Fríjoles
+  examples: |
+    - frijoles
+- synonym: Espaguetis con albóndigas
+  examples: |
+    - espaguetis con albóndigas
+- synonym: Burrito Bol De Pollo Chipotle
+  examples: |
+    - burrito Bol De Pollo Chipotle
+- synonym: Sopa de fideos y albóndigas
+  examples: |
+    - sopa de fideos y albóndigas
+- synonym: Sopa de lentejas
+  examples: |
+    - sopa de lentejas
+- synonym: Crema de calabacín
+  examples: |
+    - crema de calabacín
+- synonym: Crema de champiñones
+  examples: |
+    - crema de champiñones
+- synonym: Mondongo
+  examples: |
+    - mondongo
+- synonym: Sopa de plátano verde
+  examples: |
+    - sopa de plátano verde
+- synonym: Sopa de tortillas de huevo
+  examples: |
+    - sopa de tortillas de huevo
+- synonym: Sopa de albondigas con arroz
+  examples: |
+    - sopa de albondigas con arroz
+- synonym: Arroz con camarones
+  examples: |
+    - arroz con camarones
+- synonym: Arroz con pollo y verduras
+  examples: |
+    - arroz con pollo y verduras
+- synonym: Arroz frito tres delicias
+  examples: |
+    - arroz frito tres delicias
+- synonym: Arroz blanco
+  examples: |
+    - arroz blanco
+- synonym: Arroz atollado
+  examples: |
+    - arroz atollado
+- synonym: Arroz con coco
+  examples: |
+    - arroz con coco
+- synonym: Arroz chino colombiano
+  examples: |
+    - arroz chino colombiano
+    - arroz chino
+- synonym: Huevos villaroy
+  examples: |
+    - huevos villaroy
+- synonym: Burrito de jamón
+  examples: |
+    - burrito de jamón
+    - burrito de jamon
+- synonym: Huevos rancheros
+  examples: |
+    - huevos rancheros
+- synonym: Omelette sencillo
+  examples: |
+    - omelette sencillo
+- synonym: Arepas de huevo
+  examples: |
+    - arepas de huevo
+- synonym: Huevos pericos
+  examples: |
+    - huevos pericos
+- synonym: Pancakes
+  examples: |
+    - pancakes
+- synonym: Calentado
+  examples: |
+    - calentado
+- synonym: Changua
+  examples: |
+    - changua
+- synonym: Buñuelos
+  examples: |
+    - buñuelos
+- synonym: Almojábanas
+  examples: |
+    - almojábanas
+- synonym: Pandebonos
+  examples: |
+    - pandebonos
+- synonym: Pandeyucas
+  examples: |
+    - pandeyucas
+- synonym: Dedos de queso
+  examples: |
+    - dedos de queso
+- synonym: Torta de tres leches de chocolate
+  examples: |
+    - torta de tres leches de chocolate
+- synonym: Masa para pizza
+  examples: |
+    - masa para pizza
+- synonym: Arepas boyacenses
+  examples: |
+    - arepas boyacenses
+- synonym: Helado de vainilla
+  examples: |
+    - helado de vainilla
+- synonym: Postre de café
+  examples: |
+    - postre de cafe
+- synonym: Helado de Oreo
+  examples: |
+    - helado de oreo
+- synonym: Leche evaporada
+  examples: |
+    - leche evaporada
+- synonym: Brazo de reina
+  examples: |
+    - brazo de reina
+- synonym: Alfajores
+  examples: |
+    - alfajores
+- synonym: Crispetas o palomitas de maíz de caramelo
+  examples: |
+    - crispetas de caramelo
+    - palomitas de maíz de caramelo
+- synonym: Postre de milo
+  examples: |
+    - postre de milo
+- synonym: Fresas con crema
+  examples: |
+    - fresas con crema
+- synonym: Limonada cerezada
+  examples: |
+    - limonada cerezada
+- synonym: Frappe de mocachino
+  examples: |
+    - frappe de mocachino
+- synonym: Capuchino
+  examples: |
+    - capuchino
+- synonym: Avena
+  examples: |
+    - avena
+- synonym: Leche de coco
+  examples: |
+    - leche de coco
+- synonym: Refajo
+  examples: |
+    - refajo
+- synonym: Piña colada
+  examples: |
+    - piña colada
+- synonym: Sabajón
+  examples: |
+    - sabajón
+- synonym: Malteada o batido de vainilla
+  examples: |
+    - malteada de vainilla
+    - batido de vainilla
+- synonym: Alitas de pollo Búfalo
+  examples: |
+    - alitas de pollo bufalo
+- synonym: carne de res
+  examples: |
+    - carnes rojas
+- synonym: huevo
+  examples: |
+    - Huevo
+- synonym: cebolla
+  examples: |
+    - Cebolla
+    - Cebolla larga
+- synonym: pollo
+  examples: |
+    - Pollo
+- synonym: carne
+  examples: |
+    - Carne
+- synonym: zanahoria
+  examples: |
+    - Zanahoria
+- synonym: leche
+  examples: |
+    - Leche
+- synonym: queso
+  examples: |
+    - Queso
+- synonym: maiz
+  examples: |
+    - Maiz
+- synonym: arroz
+  examples: |
+    - Arroz
+- synonym: cerdo
+  examples: |
+    - Cerdo
+- synonym: vainilla
+  examples: |
+    - Vainilla
+- synonym: pimentón
+  examples: |
+    - Pimentón
+    - Pimenton
+- synonym: ajo
+  examples: |
+    - Ajo
+    - dientes de ajo
+- synonym: matequilla
+  examples: |
+    - Mantequilla
+- synonym: tomates
+  examples: |
+    - Tomates
+- synonym: salmón
+  examples: |
+    - Salmón
+- synonym: pan
+  examples: |
+    - Pan
+- synonym: perejil
+  examples: |
+    - Perejil
+- synonym: aceite
+  examples: |
+    - Aceite de oliva extra virgen
+- synonym: harina
+  examples: |
+    - Harina de trigo
+- synonym: levadura
+  examples: |
+    - Levadura
+- synonym: orégano
+  examples: |
+    - Oregano
+- synonym: cilantro
+  examples: |
+    - Cilantro
+- synonym: vinagre
+  examples: |
+    - Vinagre
+- synonym: limón
+  examples: |
+    - Limon
+- synonym: pasta
+  examples: |
+    - Pasta
+- synonym: vino
+  examples: |
+    - Vino
+- synonym: laurel
+  examples: |
+    - Laurel
+- synonym: arvejas
+  examples: |
+    - Arvejas
+- synonym: lechuga
+  examples: |
+    - Lechuga
+- synonym: plátano
+  examples: |
+    - Platano
+- synonym: maizena
+  examples: |
+    - Maizena
+- synonym: tocineta
+  examples: |
+    - Tocineta
+- synonym: papa
+  examples: |
+    - Papa
+- synonym: yuca
+  examples: |
+    - Yuca
+- synonym: camarones
+  examples: |
+    - Camarones
+- synonym: garbanzos
+  examples: |
+    - Garbanzos
+- synonym: jengibre
+  examples: |
+    - Jengibre
+- synonym: albahaca
+  examples: |
+    - Albahaca
+- synonym: lomo
+  examples: |
+    - Lomo
+- synonym: mostaza
+  examples: |
+    - Mostaza
+- synonym: salchichas
+  examples: |
+    - Salchichas
+- synonym: fríjoles
+  examples: |
+    - Frijoles
+- synonym: costilla de cerdo
+  examples: |
+    - Costillas de cerdo
+- synonym: caldo
+  examples: |
+    - Caldo de gallina
+- synonym: cerveza
+  examples: |
+    - Cerveza
+- synonym: manzana
+  examples: |
+    - Manzana
+- synonym: guayaba
+  examples: |
+    - Guayaba
+- synonym: champiñones
+  examples: |
+    - Champiñones
+- synonym: azucar
+  examples: |
+    - Azucar
+    - Azucar glas
+- synonym: cerezas
+  examples: |
+    - Cerezas
+- synonym: canela
+  examples: |
+    - Clavos de canela
+- synonym: ají
+  examples: |
+    - Aji
+- synonym: miel
+  examples: |
+    - Miel
+- synonym: hierbabuena
+  examples: |
+    - Hierbabuena
+- synonym: langostinos
+  examples: |
+    - Langostinos
+- synonym: habichuela
+  examples: |
+    - Habichuela
+- synonym: aguardiente
+  examples: |
+    - Aguardiente
+- synonym: jalapeño
+  examples: |
+    - Jalapeño
+- synonym: Sal
+  examples: |
+    - salado
+- synonym: Arroz
+  examples: |
+    - arroz
+- synonym: ' salchichas'
+  examples: |
+    - salchichas
+- synonym: café
+  examples: |
+    - cafe
+- lookup: recetas
+  examples: |
+    - Alitas de pollo Búfalo
+    - Arroz atollado
+    - Arroz blanco
+    - Arroz chino colombiano
+    - Arroz con camarones
+    - Arroz con coco
+    - Arroz con pollo
+    - Arroz con pollo y verduras
+    - Arroz frito tres delicias
+    - Arvejas guisadas con pollo y vegetales
+    - Bistec a caballo
+    - Carne desmechada
+    - Cerdo agridulce
+    - Chuleta valluna
+    - Chuletas de cerdo asadas
+    - Costillas a la cerveza en el horno
+    - Costillas BBQ
+    - Ensalada de pasta fría con pollo
+    - Ensalada rusa
+    - Espaguetis a la carbonara
+    - Espaguetis con albóndigas
+    - Fetuccini Alfredo con pollo
+    - Filete Mignon
+    - Fríjoles
+    - Garbanzos guisados con chorizo
+    - Lasaña con carne
+    - Lomo con salsa de cebolla
+    - Lomo de cerdo al horno
+    - Macarrones con queso
+    - Mazamorra
+    - Milanesa de pollo
+    - Mondongo
+    - Papas chorreadas
+    - Pavo navideño
+    - Pechuga de pollo en salsa con tomate
+    - Pescado al ajillo
+    - Pollo a la Coca Cola
+    - Pollo a la naranja
+    - Salmón con salsa de Acre
+    - Sancocho de costilla de res
+    - Sopa de albondigas con arroz
+    - Sopa de fideos y albóndigas
+    - Sopa de lentejas
+    - Sopa de plátano verde
+    - Sopa de tortillas de huevo
+    - Avena
+    - Capuchino
+    - Frappe de mocachino
+    - Leche de coco
+    - Limonada cerezada
+    - Malteada o batido de vainilla
+    - Piña colada
+    - Refajo
+    - Sabajón
+    - Calentado
+    - Changua
+    - Huevos al estilo turco
+    - Huevos pericos
+    - Huevos rancheros
+    - Huevos villaroy
+    - Omelette sencillo
+    - Pancakes
+    - Tamales bogotanos o santafereños
+    - Almojábanas
+    - Arepas boyacenses
+    - Buñuelos
+    - Dedos de queso
+    - Galletas con chispas de chocolate
+    - Masa para pizza
+    - Pan blandito
+    - Pandebonos
+    - Pandeyucas
+    - Torta de tres leches de chocolate
+    - Alfajores
+    - Arequipe o dulce de leche
+    - Brazo de reina
+    - Crispetas o palomitas de maíz de caramelo
+    - Fresas con crema
+    - Helado de Oreo
+    - Helado de vainilla
+    - Leche evaporada
+    - Postre de café
+    - Postre de milo
+    - Arepas de huevo
+    - Burrito Bol De Pollo Chipotle
+    - Burrito de jamón
+    - Camarones apanados
+    - Chicharrón
+    - Croquetas de jamón
+    - Hamburguesas
+    - Papas al ajillo
+    - Perro caliente
+    - Salchichas al vino con patatas
+    - Sandwich de pollo asado
+    - Tajadas
+    - Wraps de pavo
+    - Crema de calabacín
+    - Crema de champiñones
+    - Hamburguesas de berenjena
+    - Puré de papas
+    - Quinoa al estilo Arroz frito tres delicias
