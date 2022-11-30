@@ -6,3 +6,4 @@ Aqui se encuentra:
 - Las diapositivas en formato pdf sobre el proyecto y la plataforma donde se realizó llamada Rasa.
 - Un ejemplo de Rasa implementado en Google Colab sobre servicio al cliente en un hotel.
 - Remy: Chatbot de recetas en Rasa para implementar localmente. Este chatbot esta incompleto.
+- Tabla con datos de recetas que incluye la categoria de la receta, el nombre, los ingredientes y la preparación de estas recetas y el link de donde se tomo la información de la receta.
