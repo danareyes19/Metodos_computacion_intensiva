@@ -1,0 +1,88 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say hi anytime the user says hi
+  conversation_start: true
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: name
+  steps:
+  - intent: name
+  - action: utter_name
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Activate recipe action
+  steps:
+  - intent: ask_recipe
+  - action: action_search_recipe
+  - active_loop: action_search_recipe
+
+- rule: No know recipe
+  condition:
+  - active_loop: utter_name
+  steps:
+  - intent: deny
+  - action: utter_ask_category
+
+- rule: change recipe
+  condition:
+  - active_loop: utter_no_ingredients
+  steps:
+  - intent: change
+  - action: action_change_recipe
+
+- rule: affirm change recipe
+  condition: 
+  - active_loop: action_change_recipe
+  steps:
+  - intent: affirm
+  - action: action_ingredients
+
+- rule: does not know ingredient
+  condition: 
+  - active_loop: utter_ask_category
+  steps:
+  - intent: deny
+  - action: utter_entities
+
+- rule: entities
+  steps:
+  - intent: entidades
+  - action: action_search_entities
+
+- rule: Question greet
+  condition:
+  - active_loop: utter_name
+  steps:
+  - intent: deny
+  - action: utter_natalia
+  - action: utter_ask_recipe
+
+- rule: thanks
+  steps:
+  - intent: mood_great
+  - action: utter_denada
+
+- rule: Interruption
+  condition:
+  # Condition that form is active.
+  - active_loop: action_search_recipe
+  steps:
+  # This unhappy path handles the case of an intent `bot_challenge`.
+  - intent: bot_challenge
+  - action: utter_iamabot
+  # Return to form after handling the `bot_challenge` intent
+  - action: action_search_recipe
+  - active_loop: action_search_recipe

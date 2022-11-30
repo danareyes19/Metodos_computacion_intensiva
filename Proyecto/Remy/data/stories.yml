@@ -1,0 +1,90 @@
+version: "3.1"
+
+stories:
+- story: conversation happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: name
+  - slot_was_set:
+    - nombre
+  - action: utter_name
+  - intent: ask_recipe
+  - action: action_search_recipe
+  - intent: affirm
+  - action: utter_start_cooking
+  - action: utter_goodbye
+  
+- story: recipe no ingredients
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: name
+  - slot_was_set:
+    - nombre
+  - action: utter_name
+  - intent: ask_recipe
+  - action: action_search_recipe
+  - intent: deny
+  - action: utter_no_ingredients
+  - intent: continue
+  - action: utter_goodbye
+
+- story: change recipe no ingredients happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: name
+  - slot_was_set:
+    - nombre
+  - action: utter_name
+  - intent: ask_recipe
+  - action: action_search_recipe
+  - intent: deny
+  - action: utter_no_ingredients
+  - intent: change
+  - action: utter_bad_goodbye
+
+- story: greeting askion path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_recipe
+  - action: action_search_recipe
+
+- story: search ingredients happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: deny
+  - action: utter_natalia
+  - action: utter_ask_recipe
+  - intent: deny
+  - action: utter_ask_category
+  - intent: deny
+  - action: utter_entities
+
+- story: say thanks
+  steps:
+  - intent: mood_great
+  - action: utter_denada
+
+- story: say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+  
+- story: bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: name
+    entities:
+    - nombre: andres
+  - slot_was_set:
+    - nombre: andres
+  - action: utter_name
