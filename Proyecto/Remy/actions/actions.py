@@ -20,7 +20,7 @@ from rasa_sdk.executor import CollectingDispatcher
 data = pd.read_csv('https://raw.githubusercontent.com/danareyes19/Metodos_computacion_intensiva/main/Proyecto/Recetas.csv')
 RECETAS = list(data['Nombre receta'])
 INGREDIENTES = list(data['Ingredientes'])
-PREPARACION = lsit(data['Preparación'])
+PREPARACION = list(data['Preparación'])
 
 model_name = 'hiiamsid/sentence_similarity_spanish_es'
 model = SentenceTransformer(model_name_or_path=model_name, device='cpu')
@@ -61,7 +61,7 @@ class ActionSearchIngredients():
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) ->  List[Dict[Text, Any]]:
-            ingrediente = next(tracker.get_latest_entity_values("ingrediente"), None):
+            ingrediente = next(tracker.get_latest_entity_values("ingrediente"), None)
 
             embedding_bert_ing = model.encode(ingrediente, show_progress_bar=False)
             similarity_i = cosine_similarity(
